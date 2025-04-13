@@ -1,4 +1,5 @@
 
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -23,119 +24,110 @@ public class AlertController {
     @FXML private Button choiceButton;
     
     @FXML
-   /** private void initialize() {
-        infoButton.setOnAction(e -> showInfoAlert());
-        warningButton.setOnAction(e -> showWarningAlert());
-        errorButton.setOnAction(e -> showErrorAlert());
-        confirmButton.setOnAction(e -> showConfirmAlert());
-        inputButton.setOnAction(e -> showInputDialog());
-        choiceButton.setOnAction(e -> showChoiceDialog());
-
-    }*/
     private void initialize() {
-    infoButton.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            showInfoAlert();
-        }
-    });
-    
-    warningButton.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            showWarningAlert();
-        }
-    });
-    
-    errorButton.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            showErrorAlert();
-        }
-    });
-    
-    confirmButton.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            showConfirmAlert();
-        }
-    });
-    
-    inputButton.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            showInputDialog();
-        }
-    });
-    
-    choiceButton.setOnAction(new EventHandler<ActionEvent>() {
-        @Override
-        public void handle(ActionEvent e) {
-            showChoiceDialog();
-        }
-    });
-}
+        infoButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                showInfoAlert();
+            }
+        });
+        
+        warningButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                showWarningAlert();
+            }
+        });
+        
+        errorButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                showErrorAlert();
+            }
+        });
+        
+        confirmButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                showConfirmAlert();
+            }
+        });
+        
+        inputButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                showInputDialog();
+            }
+        });
+        
+        choiceButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                showChoiceDialog();
+            }
+        });
+    }
     
     private void showInfoAlert() {
         Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("This is an information alert");
-        alert.setContentText("This shows some important information.");
+        alert.setTitle("Diálogo de Información");
+        alert.setHeaderText("Esta es una alerta de información");
+        alert.setContentText("Esto muestra información importante.");
         alert.showAndWait();
     }
     
     private void showWarningAlert() {
         Alert alert = new Alert(AlertType.WARNING);
-        alert.setTitle("Warning Dialog");
-        alert.setHeaderText("This is a warning alert");
-        alert.setContentText("This warns about something important!");
+        alert.setTitle("Diálogo de Advertencia");
+        alert.setHeaderText("Esta es una alerta de advertencia");
+        alert.setContentText("¡Esto advierte sobre algo importante!");
         alert.showAndWait();
     }
     
     private void showErrorAlert() {
         Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Error Dialog");
-        alert.setHeaderText("This is an error alert");
-        alert.setContentText("Something went wrong!");
+        alert.setTitle("Diálogo de Error");
+        alert.setHeaderText("Esta es una alerta de error");
+        alert.setContentText("Algo salió mal!");
         alert.showAndWait();
     }
     
     private void showConfirmAlert() {
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("This is a confirmation alert");
-        alert.setContentText("Are you sure you want to proceed?");
+        alert.setTitle("Diálogo de Confirmación");
+        alert.setHeaderText("Esta es una alerta de confirmación");
+        alert.setContentText("¿Estás seguro de que quieres continuar?");
         
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            System.out.println("User clicked OK");
+            System.out.println("Usuario hizo clic en Aceptar");
         } else {
-            System.out.println("User clicked Cancel or closed the dialog");
+            System.out.println("Usuario hizo clic en Cancelar o cerrar el diálogo");
         }
     }
     
     private void showInputDialog() {
-        TextInputDialog dialog = new TextInputDialog("default value");
-        dialog.setTitle("Text Input Dialog");
-        dialog.setHeaderText("This is a text input dialog");
-        dialog.setContentText("Please enter your name:");
+        TextInputDialog dialog = new TextInputDialog("valor predeterminado");
+        dialog.setTitle("Diálogo de Entrada de Texto");
+        dialog.setHeaderText("Este es un diálogo de entrada de texto");
+        dialog.setContentText("Por favor, ingresa tu nombre:");
         
         Optional<String> result = dialog.showAndWait();
-        result.ifPresent(name -> System.out.println("Your name is: " + name));
+        result.ifPresent(name -> System.out.println("Tu nombre es: " + name));
     }
     
     private void showChoiceDialog() {
         List<String> choices = new ArrayList<>();
-        choices.add("Option 1");
-        choices.add("Option 2");
-        choices.add("Option 3");
+        choices.add("Opción 1");
+        choices.add("Opción 2");
+        choices.add("Opción 3");
         
-        ChoiceDialog<String> dialog = new ChoiceDialog<>("Option 1", choices);
-        dialog.setTitle("Choice Dialog");
-        dialog.setHeaderText("This is a choice dialog");
-        dialog.setContentText("Choose your option:");
+        ChoiceDialog<String> dialog = new ChoiceDialog<>("Opción 1", choices);
+        dialog.setTitle("Diálogo de Elección");
+        dialog.setHeaderText("Este es un diálogo de elección");
+        dialog.setContentText("Elige tu opción:");
         
         Optional<String> result = dialog.showAndWait();
-        result.ifPresent(choice -> System.out.println("Your choice is: " + choice));
+        result.ifPresent(choice -> System.out.println("Tu elección es: " + choice));
     }
 }

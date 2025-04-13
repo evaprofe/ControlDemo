@@ -1,0 +1,55 @@
+.root {
+    -fx-font-family: "Arial";
+    -fx-base: #ececec;
+    -fx-background: #f5f5f5;
+}
+
+.button {
+    -fx-text-fill: #333333;
+    -fx-background-color: linear-gradient(#f2f2f2, #d6d6d6);
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10 5 10;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#d6d6d6, #f2f2f2);
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.text-field {
+    -fx-font-size: 14px;
+    -fx-pref-width: 200px;
+}
+
+.combo-box {
+    -fx-pref-width: 200px;
+}
+
+.list-view {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 150px;
+}
+
+.slider .thumb {
+    -fx-background-color: #4a8bc9;
+}
+
+.slider .track {
+    -fx-background-color: #d0d0d0;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #4a8bc9;
+    -fx-background-insets: 0;
+    -fx-padding: 0.5em;
+}
+
+.progress-indicator {
+    -fx-progress-color: #4a8bc9;
+}

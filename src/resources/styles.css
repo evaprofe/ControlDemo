@@ -15,12 +15,17 @@
 .button:hover {
     -fx-background-color: linear-gradient(#d6d6d6, #f2f2f2);
 }
-
-.label {
+.label.title {
+    -fx-text-fill: #2a5db0;      /* Azul corporativo */
+    -fx-font-weight: bold;       /* Negrita */
+    -fx-font-size: 18px;         /* Tamaño aumentado */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0.5, 0, 1); /* Sutil sombra */
+}
+/*.label {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #333333;
-}
+}*/
 
 .text-field {
     -fx-font-size: 14px;

@@ -6,9 +6,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="MainController"
+            stylesheets="@styles.css">
     <children>
-        <Label layoutX="200.0" layoutY="50.0" text="JavaFX Demostración de Controles" textAlignment="CENTER">
+        <Label styleClass="title" layoutX="200.0" layoutY="50.0" text="JavaFX Demostración de Controles" textAlignment="CENTER">
             <font>
                 <Font size="24.0" />
             </font>

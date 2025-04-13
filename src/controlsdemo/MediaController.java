@@ -18,8 +18,8 @@ public class MediaController {
     
     @FXML
     private void initialize() {
-        // Load media file (replace with your own media file)
-        String mediaPath = new File("src/resources/media/sample.mp4").toURI().toString();
+        
+        String mediaPath = new File("src/resources/media/sample.mp3").toURI().toString();
         Media media = new Media(mediaPath);
         mediaPlayer = new MediaPlayer(media);
         mediaView.setMediaPlayer(mediaPlayer);

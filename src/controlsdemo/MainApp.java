@@ -13,7 +13,7 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main.fxml"));
         Parent root = loader.load();
         
-        primaryStage.setTitle("JavaFX Controls Demo");
+        primaryStage.setTitle("JavaFX Controls Demostración");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }

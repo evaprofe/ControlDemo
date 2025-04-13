@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.TextInputDialog;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +23,58 @@ public class AlertController {
     @FXML private Button choiceButton;
     
     @FXML
-    private void initialize() {
+   /** private void initialize() {
         infoButton.setOnAction(e -> showInfoAlert());
         warningButton.setOnAction(e -> showWarningAlert());
         errorButton.setOnAction(e -> showErrorAlert());
         confirmButton.setOnAction(e -> showConfirmAlert());
         inputButton.setOnAction(e -> showInputDialog());
         choiceButton.setOnAction(e -> showChoiceDialog());
-    }
+
+    }*/
+    private void initialize() {
+    infoButton.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            showInfoAlert();
+        }
+    });
+    
+    warningButton.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            showWarningAlert();
+        }
+    });
+    
+    errorButton.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            showErrorAlert();
+        }
+    });
+    
+    confirmButton.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            showConfirmAlert();
+        }
+    });
+    
+    inputButton.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            showInputDialog();
+        }
+    });
+    
+    choiceButton.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            showChoiceDialog();
+        }
+    });
+}
     
     private void showInfoAlert() {
         Alert alert = new Alert(AlertType.INFORMATION);
